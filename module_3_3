@@ -1,0 +1,29 @@
+def print_params(a=1, b='строка', c=True):
+    print(a, b, c)
+
+print_params()
+print_params(10)
+print_params(10, 'другая строка')
+print_params(10, 'другая строка', False)
+print_params(b=25)
+print_params(c=[1, 2, 3])
+
+values_list = [5, 'другая строка', False]
+values_dict = {'a': 100, 'b': 'ещё одна строка', 'c': True}
+
+print_params(*values_list)
+print_params(**values_dict)
+
+values_list_2 = [54.32, 'Строка']
+print_params(*values_list_2, 42)
+
+def append_to_list(item, my_list=None):
+    if my_list is None:
+        my_list = []
+    my_list.append(item)
+    return my_list
+
+list1 = append_to_list(1)
+list2 = append_to_list(2,list1)
+print(list1)
+print(list2) 
